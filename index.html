@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Password Generator by Heidi</title>
+
+  </head>
+  <body>
+
+    <div class="container1">
+        <h2>Password Generator</h1>
+    </div>
+        
+        <div class="container2">
+            <div class="card border shadow my-3 mx auto"></div>
+                <div class="card-body p-5">
+                    <h3>Generate a Password</h2>
+                            <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <input type="text" id="passwordfield" value="Your secure password" style="border: dashed 2px #d3d3d3">
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button onclick="GetRandom()" type="button" id="btn1">Generate Password</button>
+                            </div>
+            
+                            <div class="col-md-6">
+                                <button onclick="myFunction()" type="button" id="btn2">Copy to clipboard</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <link rel="script" href="script.js">
+  </body>
+</html>
