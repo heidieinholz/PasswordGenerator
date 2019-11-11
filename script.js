@@ -3,21 +3,25 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["~", "@", "#", "%", "^", "&", "*", "(", ")", "-", "+", "=", ">", "<", "?"];
+//here's where the user's choices get stored in a giant array
 var passwordCharacters = [];
+//this is the final password
 var password = "";
-//ask the user how long they want their password
+//this is the variable for how long the user wants their password to be
 var passwordLength;
+var passwordAlert;
 
+//the function to get it started
 function gatherSymbols() {
     var passwordLength = prompt("Enter a number between 8 and 128 for how long you would like your password to be");
     console.log("passwordLength: ", passwordLength);
-    };
-    //make sure the user chooses a valid password length
-    if(passwordLength < 8 || passwordLength > 128){
-        passwordLength = prompt("Please enter a password length between 8 and 128 characters");
-        console.log("passwordLength: ", passwordLength);
     }
-    //establish the types of characters in password
+    //make sure the user chooses a valid password length
+if(passwordLength < 8 || passwordLength > 128){
+    passwordLength = prompt("Please enter a password length between 8 and 128 characters");
+    console.log("passwordLength: ", passwordLength);
+    }
+    //create variables to establish which preferences the user has
     var useLowercase = confirm("Do you want to use lowercase letters in your password?");
     console.log("useLowercase: ", useLowercase);
     var useUppercase = confirm("Do you want to use uppercase letters in your password");
@@ -26,7 +30,8 @@ function gatherSymbols() {
     console.log("useNumbers ", useNumbers);
     var useSpecial = confirm("Do you want to use special characters in your password?");
     console.log("useSpecial: ", useSpecial);
-    //if they do not choose any type of character reprompt user to choose at least one type of character for their password
+    
+    //make sure the user selects at least one type of characters with a new set of prompts
     while(useLowercase === false && useUppercase === false && useNumbers === false && useSpecial === false){
         useNumbers = confirm("Please choose at least one type of character. How about numbers?");
         console.log("useNumbers: ", useNumbers);
@@ -68,20 +73,19 @@ function gatherSymbols() {
             password = password + character;
             console.log("password: ", password);
     }
-        var password = alert("Your password is" + password);
+        alert("Your password is" + password);
+    
+    }   
 
-}
+    // call the function
+    gatherSymbols();
 
-gatherSymbols();
+//generates new password 
 createPassword(passwordLength, passwordCharacters);
-    passwordBox.textContent = password;
-
-    //generates new password 
+    passwordBox.textContent.value = password;
     btn1.addEventListener("click", function(){
-    //reset password and password character options
     password = "";
     passwordCharacters = [];
+
     gatherSymbols();
-    createPassword(passwordLength, passwordCharacters);
-    passwordBox.textContent = password;
 })
