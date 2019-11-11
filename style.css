@@ -38,9 +38,9 @@ h2, h3 {
     float: left;
 }
 
-#passwordfield {
+#passwordBox {
     width: 100%;
-    display: block;
+    display: flex;
     margin: 5px 0 20px 0;
     padding: 30px;
     font-size: 16px;
